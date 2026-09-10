@@ -25,11 +25,11 @@ Only newly written demo code and synthetic fixtures are public. No production so
 records, secrets, internal endpoints, financial rules, licensing logic, or proprietary assets are
 included. See [privacy boundary](docs/PRIVACY.md).
 
-## Milestone v0.4.0
+## Milestone v0.5.0
 
-The web client now consumes the DRF catalogue, manages a typed cart, accepts a demo JWT, and submits
-only product IDs and quantities to secure checkout. Django owns prices and stock. CORS is explicitly
-restricted to configured origins.
+The Android client now includes typed catalogue contracts, an injectable HTTP adapter, and an
+offline checkout queue that preserves idempotency across retries. Android formatting, analysis, and
+tests run in CI. See [Android architecture](docs/ANDROID.md).
 
 ## Local checks
 
