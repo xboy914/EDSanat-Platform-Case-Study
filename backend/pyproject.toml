@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edsanat-case-study-api"
-version = "0.7.0"
+version = "1.0.0"
 requires-python = ">=3.11"
 dependencies = [
   "Django>=5.1,<6",
