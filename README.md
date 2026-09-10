@@ -3,6 +3,19 @@
 A privacy-safe, clean-room full-stack portfolio project inspired by the architecture of a real
 multi-channel industrial commerce platform.
 
+## Languages and technologies
+
+| Area | Languages | Technologies |
+| --- | --- | --- |
+| Backend | Python, SQL | Django, Django REST Framework, Simple JWT, Gunicorn |
+| Web | TypeScript, TSX, CSS | Next.js App Router, React |
+| Android | Dart | Flutter, offline operation queue |
+| Windows | C#, SQL | .NET 8, WinUI 3 architecture, SQLite, xUnit |
+| Data | SQL | PostgreSQL, SQLite, Redis |
+| API and security | JSON | REST API, phone OTP, JWT, RBAC, CORS |
+| DevOps | YAML, Dockerfile, Shell | Docker, Docker Compose, GitHub Actions |
+| Quality | Python, TypeScript, Dart, C# | Ruff, Django TestCase, TypeScript type checking, Flutter Test, xUnit |
+
 ## Four engineering surfaces
 
 - **Backend:** Django, Django REST Framework, PostgreSQL
