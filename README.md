@@ -10,30 +10,26 @@ multi-channel industrial commerce platform.
 - **Android:** Flutter and Dart
 - **Windows:** C#, .NET 8, WinUI 3, SQLite, offline-first sync
 
-## What is public
+## Demonstrated capabilities
 
-This repository contains newly written demo code, synthetic fixtures, API contracts, architecture
-decisions, tests, CI, and deployment examples.
+- passwordless phone OTP, JWT, and role boundaries
+- hierarchical catalogue and ordered product galleries
+- interactive Next.js storefront and client-side cart
+- server-authoritative, transactional and idempotent checkout
+- mobile and desktop architecture boundaries
+- automated backend tests, linting, frontend typecheck, and production build
 
-## What is not public
+## Privacy boundary
 
-No production source, customer records, secrets, internal endpoints, financial rules, licensing
-logic, or proprietary EDSanat assets are included. See [privacy boundary](docs/PRIVACY.md).
+Only newly written demo code and synthetic fixtures are public. No production source, customer
+records, secrets, internal endpoints, financial rules, licensing logic, or proprietary assets are
+included. See [privacy boundary](docs/PRIVACY.md).
 
-## Repository map
+## Milestone v0.4.0
 
-- `backend/` — Django/DRF catalogue foundation
-- `web/` — responsive Next.js architecture showcase
-- `android/` — Flutter Android client scaffold
-- `windows/` — offline-first WinUI architecture boundary
-- `docs/` — architecture and disclosure policy
-
-## Milestone v0.3.0
-
-The platform now demonstrates a server-authoritative commerce flow: hierarchical catalogue,
-multiple product images, transactional stock reservation, immutable order-line price snapshots,
-customer order history, and idempotent checkout. See [commerce design](docs/COMMERCE.md) and
-[authentication design](docs/AUTHENTICATION.md).
+The web client now consumes the DRF catalogue, manages a typed cart, accepts a demo JWT, and submits
+only product IDs and quantities to secure checkout. Django owns prices and stock. CORS is explicitly
+restricted to configured origins.
 
 ## Local checks
 
@@ -41,6 +37,9 @@ customer order history, and idempotent checkout. See [commerce design](docs/COMM
 cd backend && pip install -e ".[dev]" && python manage.py test
 cd web && npm install && npm run typecheck && npm run build
 ```
+
+See [authentication](docs/AUTHENTICATION.md), [commerce](docs/COMMERCE.md), and
+[architecture](docs/ARCHITECTURE.md).
 
 ## License
 
