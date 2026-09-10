@@ -12,8 +12,8 @@ from .services import consume_challenge, issue_challenge
 
 
 class OTPRequestView(APIView):
-    authentication_classes = []
-    permission_classes = []
+    authentication_classes = ()
+    permission_classes = ()
 
     def post(self, request) -> Response:
         serializer = PhoneSerializer(data=request.data)
@@ -26,8 +26,8 @@ class OTPRequestView(APIView):
 
 
 class OTPVerifyView(APIView):
-    authentication_classes = []
-    permission_classes = []
+    authentication_classes = ()
+    permission_classes = ()
 
     def post(self, request) -> Response:
         serializer = OTPVerifySerializer(data=request.data)
@@ -46,7 +46,7 @@ class OTPVerifyView(APIView):
 
 
 class MeView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request) -> Response:
         profile = request.user.profile
