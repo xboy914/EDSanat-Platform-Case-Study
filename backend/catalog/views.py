@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from rest_framework import generics
 
 from .models import Category, Product
@@ -12,4 +14,4 @@ class CategoryList(generics.ListAPIView):
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.select_related("category").filter(is_active=True).order_by("name")
     serializer_class = ProductSerializer
-    filterset_fields = ["category"]
+    filterset_fields: ClassVar = ["category"]
