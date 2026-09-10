@@ -26,7 +26,7 @@ def checkout(*, customer, idempotency_key: str, lines: list[dict]) -> tuple[Orde
     if len(products) != len(set(product_ids)):
         raise ValidationError("One or more products are unavailable.")
 
-    total = Decimal("0")
+    total = Decimal(0)
     prepared = []
     for line in lines:
         product = products[line["product_id"]]
