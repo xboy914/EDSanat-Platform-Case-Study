@@ -25,11 +25,12 @@ Only newly written demo code and synthetic fixtures are public. No production so
 records, secrets, internal endpoints, financial rules, licensing logic, or proprietary assets are
 included. See [privacy boundary](docs/PRIVACY.md).
 
-## Milestone v0.5.0
+## Milestone v0.6.0
 
-The Android client now includes typed catalogue contracts, an injectable HTTP adapter, and an
-offline checkout queue that preserves idempotency across retries. Android formatting, analysis, and
-tests run in CI. See [Android architecture](docs/ANDROID.md).
+The Windows surface now includes compilable .NET 8 Domain, Application, and Infrastructure layers,
+a durable SQLite POS sync queue, stable operation IDs, ordered reconnect processing, and automated
+xUnit tests. The original WinUI source remains private. See [Windows architecture](windows/README.md)
+and [Android architecture](docs/ANDROID.md).
 
 ## Local checks
 
