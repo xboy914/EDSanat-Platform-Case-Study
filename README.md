@@ -28,10 +28,11 @@ logic, or proprietary EDSanat assets are included. See [privacy boundary](docs/P
 - `windows/` — offline-first WinUI architecture boundary
 - `docs/` — architecture and disclosure policy
 
-## Milestone v0.1.0
+## Milestone v0.2.0
 
-The first milestone establishes the monorepo, a tested catalogue API, four-client architecture,
-responsive showcase UI, privacy boundary, and CI quality gates.
+The platform now includes passwordless phone/OTP authentication, short-lived JWT tokens, and
+customer, seller, support, and admin role boundaries. OTP delivery remains a replaceable adapter;
+only synthetic numbers are used. See [authentication design](docs/AUTHENTICATION.md).
 
 ## Local checks
 

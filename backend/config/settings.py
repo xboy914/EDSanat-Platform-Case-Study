@@ -10,6 +10,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "rest_framework",
+    "accounts",
     "catalog",
 ]
 MIDDLEWARE = [
@@ -28,3 +29,13 @@ DATABASES = {
 }
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 USE_TZ = True
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+}
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": __import__("datetime").timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": __import__("datetime").timedelta(days=7),
+}
