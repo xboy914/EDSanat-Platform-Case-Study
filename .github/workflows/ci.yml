@@ -19,6 +19,8 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: ruff check .
       - run: python manage.py test
+      - run: python manage.py migrate --run-syncdb --noinput
+      - run: python manage.py seed_demo
   web:
     runs-on: ubuntu-latest
     defaults:
@@ -32,6 +34,15 @@ jobs:
       - run: npm install
       - run: npm run typecheck
       - run: npm run build
+  deployment:
+    runs-on: ubuntu-latest
+    env:
+      POSTGRES_PASSWORD: ci-demo-password-not-for-production
+      DJANGO_SECRET_KEY: ci-only-secret-key-with-more-than-fifty-random-characters
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose config --quiet
+      - run: docker compose build api web
   android:
     runs-on: ubuntu-latest
     defaults:
