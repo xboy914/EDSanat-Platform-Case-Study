@@ -18,7 +18,7 @@ multi-channel industrial commerce platform.
 - server-authoritative, transactional and idempotent checkout
 - offline-first Android and Windows sync boundaries
 - Docker Compose deployment with PostgreSQL and Redis
-- automated tests, linting, type checking, builds, and container validation
+- end-to-end journey plus automated tests, linting, type checking and builds
 
 ## Privacy boundary
 
@@ -26,11 +26,11 @@ Only newly written demo code and synthetic fixtures are public. No production so
 records, secrets, internal endpoints, financial rules, licensing logic, or proprietary assets are
 included. See [privacy boundary](docs/PRIVACY.md).
 
-## Milestone v0.7.0
+## Release v1.0.0
 
-The full stack now runs as production-shaped containers: a non-root Gunicorn API, a Next.js
-production server, PostgreSQL persistence, Redis infrastructure, health checks, startup migrations,
-and an idempotent synthetic catalogue seed. See [local deployment](docs/DEPLOYMENT.md).
+The portfolio case study is complete across backend, web, Android, Windows, operations, security, and
+documentation. Start with the [reviewer guide](docs/PORTFOLIO.md), then explore the
+[architecture](docs/ARCHITECTURE.md) and [security policy](SECURITY.md).
 
 ## Quick start
 
@@ -49,9 +49,9 @@ cd backend && pip install -e ".[dev]" && python manage.py test
 cd web && npm install && npm run typecheck && npm run build
 ```
 
-See [authentication](docs/AUTHENTICATION.md), [commerce](docs/COMMERCE.md),
-[Android architecture](docs/ANDROID.md), [Windows architecture](windows/README.md), and
-[system architecture](docs/ARCHITECTURE.md).
+See [local deployment](docs/DEPLOYMENT.md), [authentication](docs/AUTHENTICATION.md),
+[commerce](docs/COMMERCE.md), [Android architecture](docs/ANDROID.md), and
+[Windows architecture](windows/README.md).
 
 ## License
 
