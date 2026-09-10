@@ -16,8 +16,9 @@ multi-channel industrial commerce platform.
 - hierarchical catalogue and ordered product galleries
 - interactive Next.js storefront and client-side cart
 - server-authoritative, transactional and idempotent checkout
-- mobile and desktop architecture boundaries
-- automated backend tests, linting, frontend typecheck, and production build
+- offline-first Android and Windows sync boundaries
+- Docker Compose deployment with PostgreSQL and Redis
+- automated tests, linting, type checking, builds, and container validation
 
 ## Privacy boundary
 
@@ -25,12 +26,21 @@ Only newly written demo code and synthetic fixtures are public. No production so
 records, secrets, internal endpoints, financial rules, licensing logic, or proprietary assets are
 included. See [privacy boundary](docs/PRIVACY.md).
 
-## Milestone v0.6.0
+## Milestone v0.7.0
 
-The Windows surface now includes compilable .NET 8 Domain, Application, and Infrastructure layers,
-a durable SQLite POS sync queue, stable operation IDs, ordered reconnect processing, and automated
-xUnit tests. The original WinUI source remains private. See [Windows architecture](windows/README.md)
-and [Android architecture](docs/ANDROID.md).
+The full stack now runs as production-shaped containers: a non-root Gunicorn API, a Next.js
+production server, PostgreSQL persistence, Redis infrastructure, health checks, startup migrations,
+and an idempotent synthetic catalogue seed. See [local deployment](docs/DEPLOYMENT.md).
+
+## Quick start
+
+```bash
+cp .env.example .env
+# Replace the placeholder secrets in .env
+docker compose up --build
+```
+
+Open http://localhost:3000 and verify the API at http://localhost:8000/health/.
 
 ## Local checks
 
@@ -39,8 +49,9 @@ cd backend && pip install -e ".[dev]" && python manage.py test
 cd web && npm install && npm run typecheck && npm run build
 ```
 
-See [authentication](docs/AUTHENTICATION.md), [commerce](docs/COMMERCE.md), and
-[architecture](docs/ARCHITECTURE.md).
+See [authentication](docs/AUTHENTICATION.md), [commerce](docs/COMMERCE.md),
+[Android architecture](docs/ANDROID.md), [Windows architecture](windows/README.md), and
+[system architecture](docs/ARCHITECTURE.md).
 
 ## License
 
