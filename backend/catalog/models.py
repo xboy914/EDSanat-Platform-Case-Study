@@ -20,3 +20,13 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return f"{self.sku} · {self.name}"
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
+    url = models.URLField()
+    alt_text = models.CharField(max_length=200)
+    position = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ("position", "id")
