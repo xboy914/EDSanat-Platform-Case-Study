@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,6 +10,7 @@ ROOT_URLCONF = "config.urls"
 INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
+    "corsheaders",
     "rest_framework",
     "accounts",
     "catalog",
@@ -16,8 +18,10 @@ INSTALLED_APPS = [
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 DATABASES = {
     "default": {
         "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.sqlite3"),
@@ -30,13 +34,12 @@ DATABASES = {
 }
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 USE_TZ = True
-
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": __import__("datetime").timedelta(minutes=15),
-    "REFRESH_TOKEN_LIFETIME": __import__("datetime").timedelta(days=7),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
