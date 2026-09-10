@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from rest_framework import serializers
 
 from .models import Category, Product
@@ -6,7 +8,7 @@ from .models import Category, Product
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ["id", "name", "slug", "parent"]
+        fields: ClassVar = ["id", "name", "slug", "parent"]
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -14,4 +16,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ["id", "sku", "name", "category", "category_name", "price", "stock"]
+        fields: ClassVar = [
+            "id", "sku", "name", "category", "category_name", "price", "stock"
+        ]
