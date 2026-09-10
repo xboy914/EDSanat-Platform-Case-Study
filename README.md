@@ -28,11 +28,12 @@ logic, or proprietary EDSanat assets are included. See [privacy boundary](docs/P
 - `windows/` — offline-first WinUI architecture boundary
 - `docs/` — architecture and disclosure policy
 
-## Milestone v0.2.0
+## Milestone v0.3.0
 
-The platform now includes passwordless phone/OTP authentication, short-lived JWT tokens, and
-customer, seller, support, and admin role boundaries. OTP delivery remains a replaceable adapter;
-only synthetic numbers are used. See [authentication design](docs/AUTHENTICATION.md).
+The platform now demonstrates a server-authoritative commerce flow: hierarchical catalogue,
+multiple product images, transactional stock reservation, immutable order-line price snapshots,
+customer order history, and idempotent checkout. See [commerce design](docs/COMMERCE.md) and
+[authentication design](docs/AUTHENTICATION.md).
 
 ## Local checks
 

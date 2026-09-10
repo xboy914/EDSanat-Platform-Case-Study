@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edsanat-case-study-api"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.11"
 dependencies = [
   "Django>=5.1,<6",
@@ -25,4 +25,4 @@ line-length = 100
 target-version = "py311"
 
 [tool.setuptools.packages.find]
-include = ["config*", "catalog*", "accounts*"]
+include = ["config*", "catalog*", "accounts*", "orders*"]

@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "accounts",
     "catalog",
+    "orders",
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
